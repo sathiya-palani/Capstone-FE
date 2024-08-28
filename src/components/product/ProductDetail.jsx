@@ -11,7 +11,7 @@ import {clearReviewSubmitted, clearError, clearProduct} from '../../slices/produ
   import { toast } from 'react-toastify';
   import 'react-toastify/dist/ReactToastify.css';
   
-import ProductReview from "./ProductReview";
+// import ProductReview from "./ProductReview";
 
 
 export default function ProductDetail () {
@@ -80,7 +80,7 @@ export default function ProductDetail () {
     // },[dispatch,id,isReviewSubmitted, error])
 
     useEffect (() => {
-        console.log(product);
+        // console.log(product);
         dispatch(getProduct(id))
        }, [dispatch, id ])
     

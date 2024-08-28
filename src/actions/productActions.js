@@ -38,10 +38,17 @@ export const getProduct = id => async (dispatch) => {
         const { data }  =  await axios.get(`https://capstone-be-3xps.onrender.com/api/v1/product/${id}`);
        
         dispatch(productSuccess(data))
-    } catch (error) {
-        //handle error
-        dispatch(productFail(error.response.data.message))
     }
+//    catch (error) {
+    //     //handle error
+    //     dispatch(productFail(error.response.data.message))
+    // }
+
+    catch (error) {
+        console.error('Error fetching product:', error); // Log the full error object
+        dispatch(productFail(error.response ? error.response.data.message : 'Network Error'));
+    }
+    
     
 }
 
