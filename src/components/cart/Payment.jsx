@@ -66,7 +66,7 @@ export default function Payment() {
         e.preventDefault();
         document.querySelector('#pay_btn').disabled = true;
         try {
-            const {data} = await axios.post('https://easybuy-be.onrender.com/api/v1/payment/process', paymentData)
+            const {data} = await axios.post('https://capstone-be-2-52ns.onrender.com/api/v1/payment/process', paymentData)
             {
                 headers:{
                     authorization : localStorage.getItem('token')

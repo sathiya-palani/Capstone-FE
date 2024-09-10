@@ -46,7 +46,7 @@ export const login = (email, password) => async (dispatch) => {
 
         try {
             dispatch(loginRequest())
-            const { data }  = await axios.post(`https://capstone-be-3xps.onrender.com/api/v1/login`,{email,password});
+            const { data }  = await axios.post(`https://capstone-be-2-52ns.onrender.com/api/v1/login`,{email,password});
             localStorage.setItem('token',data.token)
             dispatch(loginSuccess(data))
         } catch (error) {
@@ -69,7 +69,7 @@ export const register = (userData) => async (dispatch) => {
             }
         }
 
-        const { data }  = await axios.post(`https://capstone-be-3xps.onrender.com/api/v1/register`,userData, config);
+        const { data }  = await axios.post(`https://capstone-be-2-52ns.onrender.com/api/v1/register`,userData, config);
        
         dispatch(registerSuccess(data))
     } catch (error) {
@@ -84,7 +84,7 @@ export const loadUser =  async (dispatch) => {
         dispatch(loadUserRequest())
        
 
-        const { data }  = await axios.get(`https://capstone-be-3xps.onrender.com/api/v1/myprofile`);
+        const { data }  = await axios.get(`https://capstone-be-2-52ns.onrender.com/api/v1/myprofile`);
         {
             headers:{
                 authorization:localStorage.getItem('token')
@@ -100,7 +100,7 @@ export const loadUser =  async (dispatch) => {
 export const logout =  async (dispatch) => {
 
     try {
-        await axios.get(`https://capstone-be-3xps.onrender.com/api/v1/logout`);
+        await axios.get(`https://capstone-be-2-52ns.onrender.com/api/v1/logout`);
         localStorage.removeItem('token');
         dispatch(logoutSuccess())
     } catch (error) {
@@ -119,7 +119,7 @@ export const updateProfile = (userData) => async (dispatch) => {
             }
         }
 
-        const { data }  = await axios.put(`https://capstone-be-3xps.onrender.com/api/v1/update`,userData, config);
+        const { data }  = await axios.put(`https://capstone-be-2-52ns.onrender.com/api/v1/update`,userData, config);
        
         dispatch(updateProfileSuccess(data))
     } catch (error) {
@@ -137,7 +137,7 @@ export const updatePassword = (formData) => async (dispatch) => {
                 'Content-type': 'application/json'
             }
         }
-        await axios.put(`https://capstone-be-3xps.onrender.com/api/v1/password/change`, formData, config);
+        await axios.put(`https://capstone-be-2-52ns.onrender.com/api/v1/password/change`, formData, config);
        
         dispatch(updatePasswordSuccess())
     } catch (error) {
@@ -155,7 +155,7 @@ export const forgotPassword = (formData) => async (dispatch) => {
                 'Content-type': 'application/json'
             }
         }
-        const { data} =  await axios.post(`https://capstone-be-3xps.onrender.com/api/v1/password/forgot`, formData, config);
+        const { data} =  await axios.post(`https://capstone-be-2-52ns.onrender.com/api/v1/password/forgot`, formData, config);
         {
             headers:{
                 authorization:localStorage.getItem('token')
@@ -177,7 +177,7 @@ export const resetPassword = (formData, token) => async (dispatch) => {
                 'Content-type': 'application/json'
             }
         }
-        const { data} =  await axios.post(`https://capstone-be-3xps.onrender.com/api/v1/password/reset/${token}`, formData, config);
+        const { data} =  await axios.post(`https://capstone-be-2-52ns.onrender.com/api/v1/password/reset/${token}`, formData, config);
        
         dispatch(resetPasswordSuccess(data))
     } catch (error) {
@@ -190,7 +190,7 @@ export const getUsers =  async (dispatch) => {
 
     try {
         dispatch(usersRequest())
-        const { data }  = await axios.get(`https://capstone-be-3xps.onrender.com/api/v1/admin/users`);
+        const { data }  = await axios.get(`https://capstone-be-2-52ns.onrender.com/api/v1/admin/users`);
         {
             headers:{
                 authorization:localStorage.getItem('token')
@@ -207,7 +207,7 @@ export const getUser = id => async (dispatch) => {
 
     try {
         dispatch(userRequest())
-        const { data }  = await axios.get(`https://capstone-be-3xps.onrender.com/api/v1/admin/user/${id}`);
+        const { data }  = await axios.get(`https://capstone-be-2-52ns.onrender.com/api/v1/admin/user/${id}`);
         {
             headers:{
                 authorization:localStorage.getItem('token')
@@ -224,7 +224,7 @@ export const deleteUser = id => async (dispatch) => {
 
     try {
         dispatch(deleteUserRequest())
-        await axios.delete(`https://capstone-be-3xps.onrender.com/api/v1/admin/user/${id}`);
+        await axios.delete(`https://capstone-be-2-52ns.onrender.com/api/v1/admin/user/${id}`);
         {
             headers:{
                 authorization:localStorage.getItem('token')
@@ -246,7 +246,7 @@ export const updateUser = (id, formData) => async (dispatch) => {
                 'Content-type': 'application/json'
             }
         }
-        await axios.put(`https://capstone-be-3xps.onrender.com/api/v1/admin/user/${id}`, formData, config);
+        await axios.put(`https://capstone-be-2-52ns.onrender.com/api/v1/admin/user/${id}`, formData, config);
        
         dispatch(updateUserSuccess())
     } catch (error) {

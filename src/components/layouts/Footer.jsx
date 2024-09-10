@@ -6,7 +6,7 @@ export  default function Footer (){
       <div className="container-fluid">
         <div className="row">
             <div className="col-4 text-center">
-                <h4 className="fw-bold">Easy Buy</h4>
+                <h4 className="fw-bold">Rental App</h4>
                <div style={{fontStyle:'italic'}}>
                <span className="d-block mt-1">A108, Adam Street</span>
                 <span className="d-block mt-1">New York, NY 535022</span>

@@ -4,7 +4,7 @@ import axios from 'axios';
 export const createOrder = order => async(dispatch) => {
     try {
        dispatch(createOrderRequest())
-       const {data} = await axios.post(`https://capstone-be-3xps.onrender.com/api/v1/order/new`, order)
+       const {data} = await axios.post(`https://capstone-be-2-52ns.onrender.com/api/v1/order/new`, order)
        {
         headers:{
             authorization:localStorage.getItem('token')
@@ -18,7 +18,7 @@ export const createOrder = order => async(dispatch) => {
 export const userOrders = async(dispatch) => {
     try {
        dispatch(userOrdersRequest())
-       const {data} = await axios.get(`https://capstone-be-3xps.onrender.com/api/v1/myorders`)
+       const {data} = await axios.get(`https://capstone-be-2-52ns.onrender.com/api/v1/myorders`)
        {
         headers:{
             authorization:localStorage.getItem('token')
@@ -32,7 +32,7 @@ export const userOrders = async(dispatch) => {
 export const orderDetail = id => async(dispatch) => {
     try {
        dispatch(orderDetailRequest())
-       const {data} = await axios.get(`https://capstone-be-3xps.onrender.com/api/v1/order/${id}`)
+       const {data} = await axios.get(`https://capstone-be-2-52ns.onrender.com/api/v1/order/${id}`)
        {
         headers:{
             authorization:localStorage.getItem('token')
@@ -47,7 +47,7 @@ export const orderDetail = id => async(dispatch) => {
 export const adminOrders = async(dispatch) => {
     try {
        dispatch(adminOrdersRequest())
-       const {data} = await axios.get(`https://capstone-be-3xps.onrender.com/api/v1/admin/orders`)
+       const {data} = await axios.get(`https://capstone-be-2-52ns.onrender.com/api/v1/admin/orders`)
        {
         headers:{
             authorization:localStorage.getItem('token')
@@ -62,7 +62,7 @@ export const adminOrders = async(dispatch) => {
 export const deleteOrder = id => async(dispatch) => {
     try {
        dispatch(deleteOrderRequest())
-       await axios.delete(`https://capstone-be-3xps.onrender.com/api/v1/admin/order/${id}`)
+       await axios.delete(`https://capstone-be-2-52ns.onrender.com/api/v1/admin/order/${id}`)
        {
         headers:{
             authorization:localStorage.getItem('token')
@@ -77,7 +77,7 @@ export const deleteOrder = id => async(dispatch) => {
 export const updateOrder = (id, orderData)  => async(dispatch) => {
     try {
        dispatch(updateOrderRequest())
-       const { data} = await axios.put(`https://capstone-be-3xps.onrender.com/api/v1/admin/order/${id}`, orderData)
+       const { data} = await axios.put(`https://capstone-be-2-52ns.onrender.com/api/v1/admin/order/${id}`, orderData)
       
        dispatch(updateOrderSuccess(data))
     } catch (error) {

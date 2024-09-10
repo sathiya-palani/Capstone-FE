@@ -121,7 +121,7 @@ export default function ProductDetail () {
                         <span className="btn btn-primary plus" onClick={increaseQty}>+</span>
                     </div>
 
-                    <button type="button" id="cart_btn" 
+                    {/* <button type="button" id="cart_btn" 
                     //  disabled={product.stock===0?true:false} 
                      onClick={()=>{
                         dispatch(addCartItem(product._id, quantity))
@@ -131,12 +131,12 @@ export default function ProductDetail () {
                         })
                     }}
                      className="btn btn-primary d-inline ml-4"
-                     >Add to Cart</button>
+                     >Add to Cart</button> */}
 
                      
-             {/* <button type="button" id="cart_btn"
+             <button type="button" id="cart_btn"
              onClick={() =>dispatch(addCartItem(product._id))}
-              className="btn btn-primary d-inline ml-4">Add to Booking</button> */}
+              className="btn btn-primary d-inline ml-4">Add to Booking</button>
 
 
                     <hr/>

@@ -22,7 +22,7 @@ export default function Header () {
         <div className="col-12 col-md-3  d-flex justify-content-center align-items-center">
           <div className="navbar-brand">
             <Link to="/">
-              <img width="110px" alt='EasyBuy logo' src="/images/logo.jpeg" />
+              <img width="110px" alt='Rental App' src="/logo 1.png" />
             </Link>
             </div>
         </div>

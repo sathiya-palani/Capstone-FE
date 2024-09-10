@@ -6,7 +6,7 @@ export const getProducts = (keyword, price, category, rating, currentPage) => as
 
     try {  
         dispatch(productsRequest()) 
-        let link = `https://capstone-be-3xps.onrender.com/api/v1/products?page=${currentPage}`;
+        let link = `https://capstone-be-2-52ns.onrender.com/api/v1/products?page=${currentPage}`;
         
         // if(keyword) {
         //     link += `&keyword=${keyword}`
@@ -35,7 +35,7 @@ export const getProduct = id => async (dispatch) => {
 
     try {  
         dispatch(productRequest()) 
-        const { data }  =  await axios.get(`https://capstone-be-3xps.onrender.com/api/v1/product/${id}`);
+        const { data }  =  await axios.get(`https://capstone-be-2-52ns.onrender.com/api/v1/product/${id}`);
        
         dispatch(productSuccess(data))
     }
@@ -61,7 +61,7 @@ export const createReview = reviewData => async (dispatch) => {
                 'Content-type': 'application/json'
             }
         }
-        const { data }  =  await axios.put(`https://capstone-be-3xps.onrender.com/api/v1/review`,reviewData, config);
+        const { data }  =  await axios.put(`https://capstone-be-2-52ns.onrender.com/api/v1/review`,reviewData, config);
        
         dispatch(createReviewSuccess(data))
     } catch (error) {
@@ -75,7 +75,7 @@ export const getAdminProducts  =  async (dispatch) => {
 
     try {  
         dispatch(adminProductsRequest()) 
-        const { data }  =  await axios.get(`https://capstone-be-3xps.onrender.com/api/v1/admin/products`);
+        const { data }  =  await axios.get(`https://capstone-be-2-52ns.onrender.com/api/v1/admin/products`);
         
         dispatch(adminProductsSuccess(data))
     } catch (error) {
@@ -89,7 +89,7 @@ export const createNewProduct  =  (product)=> async (dispatch) => {
 
     try {  
         dispatch(newProductRequest()) 
-        const { data }  =  await axios.post(`https://capstone-be-3xps.onrender.com/api/v1/admin/product/new`, product);
+        const { data }  =  await axios.post(`https://capstone-be-2-52ns.onrender.com/api/v1/admin/product/new`, product);
        
         dispatch(newProductSuccess(data))
     } catch (error) {
@@ -103,7 +103,7 @@ export const deleteProduct  =  id => async (dispatch) => {
 
     try {  
         dispatch(deleteProductRequest()) 
-        await axios.delete(`https://capstone-be-3xps.onrender.com/api/v1/admin/product/${id}`);
+        await axios.delete(`https://capstone-be-2-52ns.onrender.com/api/v1/admin/product/${id}`);
         {
             headers:{
                 authorization:localStorage.getItem('token')
@@ -121,7 +121,7 @@ export const updateProduct  =  (id, productData) => async (dispatch) => {
 
     try {  
         dispatch(updateProductRequest()) 
-        const { data }  =  await axios.put(`https://capstone-be-3xps.onrender.com/api/v1/admin/product/${id}`, productData);
+        const { data }  =  await axios.put(`https://capstone-be-2-52ns.onrender.com/api/v1/admin/product/${id}`, productData);
         {
             headers:{
                 authorization:localStorage.getItem('token')
@@ -141,7 +141,7 @@ export const getReviews =  id => async (dispatch) => {
 
     try {  
         dispatch(reviewsRequest()) 
-        const { data }  =  await axios.get(`https://capstone-be-3xps.onrender.com/api/v1/admin/reviews`,{params: {id}});
+        const { data }  =  await axios.get(`https://capstone-be-2-52ns.onrender.com/api/v1/admin/reviews`,{params: {id}});
         {
             headers:{
                 authorization:localStorage.getItem('token')
@@ -159,7 +159,7 @@ export const deleteReview =  (productId, id) => async (dispatch) => {
 
     try {  
         dispatch(deleteReviewRequest()) 
-        await axios.delete(`https://capstone-be-3xps.onrender.com/api/v1/admin/review`,{params: {productId, id}});
+        await axios.delete(`https://capstone-be-2-52ns.onrender.com/api/v1/admin/review`,{params: {productId, id}});
         {
             headers:{
                 authorization:localStorage.getItem('token')

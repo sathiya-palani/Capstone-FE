@@ -26,7 +26,7 @@ export const addCartItem = (id, quantity) => async(dispatch) => {
     try {
         dispatch(addCartItemRequest())
 
-        const {data } = await axios.get(`https://capstone-be-3xps.onrender.com/api/v1/product/${id}`)
+        const {data } = await axios.get(`https://capstone-be-2-52ns.onrender.com/api/v1/product/${id}`)
         dispatch(addCartItemSuccess({
             product: data.product._id,
             name: data.product.name,
